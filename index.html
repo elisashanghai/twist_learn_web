@@ -44,7 +44,7 @@
 </head>
 <body>
 
-    <h1>Enter Coupon Code to Access Your Tutorial</h1>
+    <h1>Enter Coupon Code to Access the Videos</h1>
 
     <input type="text" id="coupon-code" placeholder="Enter your coupon code">
     <button onclick="validateCoupon()">Submit</button>
@@ -53,19 +53,18 @@
 
     <div id="video-container">
         <div>
-            <h2 id="video1-title" class="video-title">1. Twisting:</h2>
+            <h2 id="video1-title" class="video-title">Video 1:</h2>
             <iframe id="video-frame-1" class="video-frame" allowfullscreen></iframe>
         </div>
         <div>
-            <h2 id="video2-title" class="video-title">2. Trimming</h2>
+            <h2 id="video2-title" class="video-title">Video 2:</h2>
             <iframe id="video-frame-2" class="video-frame" allowfullscreen></iframe>
         </div>
     </div>
 
     <script>
         function validateCoupon() {
-            const correctCoupon = "YOURCOUPONCODE";  // Replace with your actual coupon code
-            const userInput = document.getElementById("coupon-code").value;
+            const userCoupon = document.getElementById("coupon-code").value;
             const errorMessage = document.getElementById("error-message");
             const videoContainer = document.getElementById("video-container");
             const videoFrame1 = document.getElementById("video-frame-1");
@@ -73,21 +72,31 @@
             const video1Title = document.getElementById("video1-title");
             const video2Title = document.getElementById("video2-title");
 
-            if (userInput === "BR4Q9") {
-                errorMessage.textContent = "";
-                videoContainer.style.display = "flex";
-                video1Title.style.display = "block";
-                video2Title.style.display = "block";
-                videoFrame1.src = "https://www.youtube.com/embed/u6hc_oMxafU";  // Replace with your first YouTube video ID
-                videoFrame2.src = "https://www.youtube.com/embed/-66eMMbg4fg";  // Replace with your second YouTube video ID
-            } else {
-                errorMessage.textContent = "Invalid coupon code. Please try again.";
-                videoContainer.style.display = "none";
-                videoFrame1.src = "";
-                videoFrame2.src = "";
-                video1Title.style.display = "none";
-                video2Title.style.display = "none";
-            }
+            // AJAX request to validate the coupon code
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "validate_coupon.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    if (response.valid) {
+                        errorMessage.textContent = "";
+                        videoContainer.style.display = "flex";
+                        video1Title.style.display = "block";
+                        video2Title.style.display = "block";
+                        videoFrame1.src = "https://www.youtube.com/embed/" + response.videos.video1;
+                        videoFrame2.src = "https://www.youtube.com/embed/" + response.videos.video2;
+                    } else {
+                        errorMessage.textContent = "Invalid coupon code. Please try again.";
+                        videoContainer.style.display = "none";
+                        videoFrame1.src = "";
+                        videoFrame2.src = "";
+                        video1Title.style.display = "none";
+                        video2Title.style.display = "none";
+                    }
+                }
+            };
+            xhr.send("coupon=" + encodeURIComponent(userCoupon));
         }
     </script>
 
