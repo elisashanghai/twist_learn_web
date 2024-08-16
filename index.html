@@ -136,19 +136,20 @@
 </div>
 
 <script>
-    const coupons = {
+    // Example list of valid coupon codes
+    const validCouponCodes = {
         "BR4Q9": {
             video1: "u6hc_oMxafU",
             video2: "-66eMMbg4fg"
         },
-        "VS87s": {
+        "VS87S": {
             video1: "u6hc_oMxafU",
             video2: "-66eMMbg4fg"
         }
     };
 
     function validateCoupon() {
-        const userInput = document.getElementById("coupon-code").value.trim();
+        const couponCode = document.getElementById('coupon-code').value;
         const errorMessage = document.getElementById("error-message");
         const videoContainer = document.getElementById("video-container");
         const content = document.querySelector('.content');
@@ -158,16 +159,17 @@
         const video1Title = document.getElementById("video1-title");
         const video2Title = document.getElementById("video2-title");
         const returnButton = document.getElementById("return-button");
+        const upperCaseCoupon = couponCode.toUpperCase();
 
-        if (coupons[userInput]) {
+        if (validCouponCodes[upperCaseCoupon]) {
             errorMessage.textContent = "";
             content.style.display = "none";
             welcomeImage.style.display = "none";
             videoContainer.style.display = "flex";
             video1Title.style.display = "block";
             video2Title.style.display = "block";
-            videoFrame1.src = "https://www.youtube.com/embed/" + coupons[userInput].video1;
-            videoFrame2.src = "https://www.youtube.com/embed/" + coupons[userInput].video2;
+            videoFrame1.src = "https://www.youtube.com/embed/" + validCouponCodes[upperCaseCoupon].video1;
+            videoFrame2.src = "https://www.youtube.com/embed/" + validCouponCodes[upperCaseCoupon].video2;
             returnButton.style.display = "block";
         } else {
             errorMessage.textContent = "Invalid coupon code. Please try again.";
