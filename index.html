@@ -3,105 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coupon Code Access</title>
+    <title>Twist Nest School</title>
+    <link href="https://fonts.googleapis.com/css2?family=Laries+Script:wght@400&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'Pacifico';
+            src: url('fonts/Pacifico/Pacifico-Regular.ttf') format('truetype'); /* Ensure the path is correct */
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('fonts/Montserrat/static/Montserrat-SemiBold.ttf') format('truetype'); /* Adjust the path as needed */
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Roboto';
+            src: url('fonts/Roboto/Roboto-Thin.ttf') format('truetype'); /* Adjust the path as needed */
+            font-weight: normal;
+            font-style: normal;
+        }
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
+            text-align: left;
+            margin: 20;
+            padding: 0;
+            background-color: #85C8FF; /* Light blue background */
+            color: #333; /* Dark text for readability */
         }
-        #video-container {
-            display: none;
-            margin-top: 20px;
+        header {
+            background-color: #85C8FF; /* Match the body's background color */
+            padding: 10px 0;
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            justify-content: left;
+            align-items: left;
+            width: 100%; /* Ensure the header spans the full width of the page */
+            color: #333; /* Keeping the text color for readability */
         }
-        input[type="text"] {
+        header h1 {
+            font-family: 'Pacifico', cursive; /* Using Matemasie with a fallback of cursive */
+            font-size: 24px;
+        }
+        h2 {
+            font-family: 'Montserrat', cursive; /* Fallback to cursive if Gochi Hand fails to load */
+            font-size: 52px; /* Adjust size as needed */
+        }
+        h3 {
+            font-family: 'Roboto', cursive; /* Fallback to cursive if Gochi Hand fails to load */
+            font-size: 16px; /* Adjust size as needed */
+        }
+
+        #logo {
+            width: 100px; /* Adjust size as necessary */
+            margin-right: 20px; /* Space between logo and title */
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .content {
+            flex: 1;
+            margin-right: 100px; /* Space between content and image */
+        }
+        .welcome-image {
+            max-width: 400px; /* Adjust size as necessary */
+            height: auto;
+            flex-shrink: 0; /* Prevents resizing */
+        }
+        input[type="text"], button {
             padding: 10px;
-            width: 200px;
             font-size: 16px;
+            margin-top: 10px;
+            display: block; /* Aligns items to the block */
         }
         button {
-            padding: 10px 20px;
-            font-size: 16px;
             cursor: pointer;
+            background-color: #E0FF78; 
+            border: none;
+            color: black;
+            border-radius: 14px;
         }
         .error-message {
             color: red;
             margin-top: 10px;
         }
         .video-frame {
-            width: 560px;
-            height: 315px;
+            width: 100%; /* Full width of the container */
+            height: 315px; /* Fixed height */
             border: none;
+            margin-top: 20px;
+        }
+        #video-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
         }
         .video-title {
             display: none;
-            margin-bottom: 10px;
+        }
+        #return-button {
+            display: none;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Enter Coupon Code to Access the Videos</h1>
+<header>
+    <img id="logo" src="logo.png" alt="Twist Nest Logo"> <!-- Ensure you have a 'logo.png' in your directory -->
+    <h1>Twist Nest School</h1>
+</header>
 
-    <input type="text" id="coupon-code" placeholder="Enter your coupon code">
-    <button onclick="validateCoupon()">Submit</button>
-
-    <div id="error-message" class="error-message"></div>
-
-    <div id="video-container">
-        <div>
-            <h2 id="video1-title" class="video-title">Video 1:</h2>
-            <iframe id="video-frame-1" class="video-frame" allowfullscreen></iframe>
-        </div>
-        <div>
-            <h2 id="video2-title" class="video-title">Video 2:</h2>
-            <iframe id="video-frame-2" class="video-frame" allowfullscreen></iframe>
-        </div>
+<div class="container">
+    <div class="content">
+        <h2>WELCOME TO TWIST NEST SCHOOL!</h2>
+        <h3>Learn and create with exclusive tutorial videos tailored just for you. Enter your coupon code below to access your tutorial. The coupon code can be found on the card included with your Twist Stick DIY set purchase. </h3>
+        <input type="text" id="coupon-code" placeholder="Enter your coupon code">
+        <button onclick="validateCoupon()">Submit</button>
+        <div id="error-message" class="error-message"></div>
     </div>
+    <img class="welcome-image" src="welcome-image.jpg" alt="Welcome Image"> <!-- Ensure you have a 'welcome-image.jpg' in your directory -->
+</div>
 
-    <script>
-        // Plain text coupon codes and corresponding video IDs
-        const coupons = {
-            "BR4Q9": {
-                video1: "u6hc_oMxafU",
-                video2: "-66eMMbg4fg"
-            },
-            "VS87s": {
-                video1: "u6hc_oMxafU",
-                video2: "-66eMMbg4fg"
-            }
-        };
+<div id="video-container">
+    <h2 id="video1-title" class="video-title">1. Twisting</h2>
+    <iframe id="video-frame-1" class="video-frame" allowfullscreen></iframe>
+    <h2 id="video2-title" class="video-title">2: Trimming</h2>
+    <iframe id="video-frame-2" class="video-frame" allowfullscreen></iframe>
+    <button id="return-button" onclick="returnToMain()">Return</button>
+</div>
 
-        function validateCoupon() {
-            const userInput = document.getElementById("coupon-code").value.trim();
-            const errorMessage = document.getElementById("error-message");
-            const videoContainer = document.getElementById("video-container");
-            const videoFrame1 = document.getElementById("video-frame-1");
-            const videoFrame2 = document.getElementById("video-frame-2");
-            const video1Title = document.getElementById("video1-title");
-            const video2Title = document.getElementById("video2-title");
-
-            // Check if the user input matches any of the coupon codes
-            if (coupons[userInput]) {
-                errorMessage.textContent = "";
-                videoContainer.style.display = "flex";
-                video1Title.style.display = "block";
-                video2Title.style.display = "block";
-                videoFrame1.src = "https://www.youtube.com/embed/" + coupons[userInput].video1;
-                videoFrame2.src = "https://www.youtube.com/embed/" + coupons[userInput].video2;
-            } else {
-                errorMessage.textContent = "Invalid coupon code. Please try again.";
-                videoContainer.style.display = "none";
-                videoFrame1.src = "";
-                videoFrame2.src = "";
-                video1Title.style.display = "none";
-                video2Title.style.display = "none";
-            }
+<script>
+    const coupons = {
+        "BR4Q9": {
+            video1: "u6hc_oMxafU",
+            video2: "-66eMMbg4fg"
+        },
+        "VS87s": {
+            video1: "u6hc_oMxafU",
+            video2: "-66eMMbg4fg"
         }
-    </script>
+    };
+
+    function validateCoupon() {
+        const userInput = document.getElementById("coupon-code").value.trim();
+        const errorMessage = document.getElementById("error-message");
+        const videoContainer = document.getElementById("video-container");
+        const content = document.querySelector('.content');
+        const welcomeImage = document.querySelector('.welcome-image');
+        const videoFrame1 = document.getElementById("video-frame-1");
+        const videoFrame2 = document.getElementById("video-frame-2");
+        const video1Title = document.getElementById("video1-title");
+        const video2Title = document.getElementById("video2-title");
+        const returnButton = document.getElementById("return-button");
+
+        if (coupons[userInput]) {
+            errorMessage.textContent = "";
+            content.style.display = "none";
+            welcomeImage.style.display = "none";
+            videoContainer.style.display = "flex";
+            video1Title.style.display = "block";
+            video2Title.style.display = "block";
+            videoFrame1.src = "https://www.youtube.com/embed/" + coupons[userInput].video1;
+            videoFrame2.src = "https://www.youtube.com/embed/" + coupons[userInput].video2;
+            returnButton.style.display = "block";
+        } else {
+            errorMessage.textContent = "Invalid coupon code. Please try again.";
+        }
+    }
+
+    function returnToMain() {
+        const content = document.querySelector('.content');
+        const welcomeImage = document.querySelector('.welcome-image');
+        const videoContainer = document.getElementById("video-container");
+
+        content.style.display = "block";
+        welcomeImage.style.display = "block";
+        videoContainer.style.display = "none";
+    }
+</script>
 
 </body>
 </html>
