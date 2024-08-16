@@ -41,6 +41,7 @@
             margin-bottom: 10px;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
 <body>
 
@@ -63,8 +64,20 @@
     </div>
 
     <script>
+        // Precomputed hashes of your coupon codes and their corresponding video IDs
+        const coupons = {
+            "bf0cfb29ad6ec0976e77cdbb26eb04701fd7e66b3d7f2ad8ab5c34e8e9a7cf7c": {
+                video1: "a87b123500bcf2cf2cb5b2f98307ebc9ad362d3cb21a1102307dce9ebdcfdf21",
+                video2: "34b6f737e3cbd7ef31e9d1d39abcbf4a4f5f7c41e0d5246c5b6a05395f7e2970"
+            },
+            "f042b35ef528e6249e66e4b3d6bb4d1c9c210dce593fc8c39eb95fd896799ee3": {
+                video1: "a87b123500bcf2cf2cb5b2f98307ebc9ad362d3cb21a1102307dce9ebdcfdf21",
+                video2: "34b6f737e3cbd7ef31e9d1d39abcbf4a4f5f7c41e0d5246c5b6a05395f7e2970"
+            }
+        };
+
         function validateCoupon() {
-            const userCoupon = document.getElementById("coupon-code").value;
+            const userInput = document.getElementById("coupon-code").value;
             const errorMessage = document.getElementById("error-message");
             const videoContainer = document.getElementById("video-container");
             const videoFrame1 = document.getElementById("video-frame-1");
@@ -72,31 +85,24 @@
             const video1Title = document.getElementById("video1-title");
             const video2Title = document.getElementById("video2-title");
 
-            // AJAX request to validate the coupon code
-            const xhr = new XMLHttpRequest();
-            xhr.open("POST", "validate_coupon.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    const response = JSON.parse(xhr.responseText);
-                    if (response.valid) {
-                        errorMessage.textContent = "";
-                        videoContainer.style.display = "flex";
-                        video1Title.style.display = "block";
-                        video2Title.style.display = "block";
-                        videoFrame1.src = "https://www.youtube.com/embed/" + response.videos.video1;
-                        videoFrame2.src = "https://www.youtube.com/embed/" + response.videos.video2;
-                    } else {
-                        errorMessage.textContent = "Invalid coupon code. Please try again.";
-                        videoContainer.style.display = "none";
-                        videoFrame1.src = "";
-                        videoFrame2.src = "";
-                        video1Title.style.display = "none";
-                        video2Title.style.display = "none";
-                    }
-                }
-            };
-            xhr.send("coupon=" + encodeURIComponent(userCoupon));
+            // Hash the user input
+            const hashedInput = CryptoJS.SHA256(userInput).toString();
+
+            if (coupons[hashedInput]) {
+                errorMessage.textContent = "";
+                videoContainer.style.display = "flex";
+                video1Title.style.display = "block";
+                video2Title.style.display = "block";
+                videoFrame1.src = "https://www.youtube.com/embed/" + coupons[hashedInput].video1;
+                videoFrame2.src = "https://www.youtube.com/embed/" + coupons[hashedInput].video2;
+            } else {
+                errorMessage.textContent = "Invalid coupon code. Please try again.";
+                videoContainer.style.display = "none";
+                videoFrame1.src = "";
+                videoFrame2.src = "";
+                video1Title.style.display = "none";
+                video2Title.style.display = "none";
+            }
         }
     </script>
 
