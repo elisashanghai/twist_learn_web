@@ -65,7 +65,7 @@
         }
         .content {
             flex: 1;
-            margin-right: 100px; /* Space between content and image */
+            margin-right: 50px; /* Space between content and image */
         }
         .welcome-image {
             max-width: 400px; /* Adjust size as necessary */
@@ -119,7 +119,9 @@
 <div class="container">
     <div class="content">
         <h2>WELCOME TO TWIST NEST SCHOOL!</h2>
-        <h3>Learn and create with exclusive tutorial videos tailored just for you. Enter your coupon code below to access your tutorial. The coupon code can be found on the card included with your Twist Stick DIY set purchase. </h3>
+        <h3>Congratulations on taking the first step towards unlocking a world of creativity with Twist Nest School! You’re just one coupon code away from accessing a treasure trove of engaging and informative crafting tutorials. 
+            <br><br>Enter your coupon code below to access your tutorial. 
+    The coupon code can be found on the card included with your Twist Stick DIY set purchase. </h3>
         <input type="text" id="coupon-code" placeholder="Enter your coupon code">
         <button onclick="validateCoupon()">Submit</button>
         <div id="error-message" class="error-message"></div>
@@ -127,6 +129,14 @@
     <img class="welcome-image" src="welcome-image.jpg" alt="Welcome Image"> <!-- Ensure you have a 'welcome-image.jpg' in your directory -->
 </div>
 
+<div class="container"><p><b>Not Working?</b><br><br>
+
+    If you’re experiencing issues with your coupon code or accessing the videos:<br><br>
+    <span> &#8226; </span><b>Double-check your code:</b> Ensure there are no typos and that you’re entering it exactly as it appears.<br>
+    <span> &#8226; </span><b>Contact Support:</b> Need extra help? Our dedicated support team is here to assist you. Reach out via <a href="mailto:twistnest.info@gmail.com">email</a>.
+    </p></div>
+
+    
 <div id="video-container">
     <h2 id="video1-title" class="video-title">1. Twisting</h2>
     <iframe id="video-frame-1" class="video-frame" allowfullscreen></iframe>
@@ -173,6 +183,7 @@
             returnButton.style.display = "block";
         } else {
             errorMessage.textContent = "Invalid coupon code. Please try again.";
+
         }
     }
 
