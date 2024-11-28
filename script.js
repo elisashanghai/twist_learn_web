@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Page loaded. Waiting for user input.");
     translateContent();
+    showNotWorkingSection();
 });
 
 const validCouponCodes = {
@@ -96,6 +97,29 @@ function translateContent() {
       document.getElementById("content-en").style.display = "block";
     }
   }
+  function showNotWorkingSection() {
+    const userLanguage = navigator.language.slice(0, 2);
+    const supportedLanguages = ["en", "de", "es", "fr", "pl"];
+    const language = supportedLanguages.includes(userLanguage) ? userLanguage : "en";
+  
+    console.log("System language for 'Not Working' section:", language);
+  
+    // 隐藏所有语言版本的 "Not Working" 部分
+    const notWorkingSections = document.querySelectorAll(".not-working");
+    notWorkingSections.forEach((section) => {
+      section.style.display = "none";
+    });
+  
+    // 显示对应语言的内容
+    const notWorkingElement = document.getElementById(`not-working-${language}`);
+    if (notWorkingElement) {
+      notWorkingElement.style.display = "block";
+    } else {
+      console.warn(`"Not Working" content for "${language}" not found. Defaulting to English.`);
+      document.getElementById("not-working-en").style.display = "block";
+    }
+  }
+  
 function returnToMain() {
     const content = document.querySelector(".content");
     const welcomeImage = document.querySelector(".welcome-image");
