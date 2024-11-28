@@ -1,202 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Twist Nest School</title>
-    <link href="https://fonts.googleapis.com/css2?family=Laries+Script:wght@400&display=swap" rel="stylesheet">
-    <style>
-        @font-face {
-            font-family: 'Pacifico';
-            src: url('fonts/Pacifico/Pacifico-Regular.ttf') format('truetype'); /* Ensure the path is correct */
-            font-weight: normal;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'Montserrat';
-            src: url('fonts/Montserrat/static/Montserrat-SemiBold.ttf') format('truetype'); /* Adjust the path as needed */
-            font-weight: normal;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'Roboto';
-            src: url('fonts/Roboto/Roboto-Thin.ttf') format('truetype'); /* Adjust the path as needed */
-            font-weight: normal;
-            font-style: normal;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            text-align: left;
-            margin: 20;
-            padding: 0;
-            background-color: #85C8FF; /* Light blue background */
-            color: #333; /* Dark text for readability */
-        }
-        header {
-            background-color: #85C8FF; /* Match the body's background color */
-            padding: 10px 0;
-            display: flex;
-            justify-content: left;
-            align-items: left;
-            width: 100%; /* Ensure the header spans the full width of the page */
-            color: #333; /* Keeping the text color for readability */
-        }
-        header h1 {
-            font-family: 'Pacifico', cursive; /* Using Matemasie with a fallback of cursive */
-            font-size: 24px;
-        }
-        h2 {
-            font-family: 'Montserrat', cursive; /* Fallback to cursive if Gochi Hand fails to load */
-            font-size: 52px; /* Adjust size as needed */
-        }
-        h3 {
-            font-family: 'Roboto', cursive; /* Fallback to cursive if Gochi Hand fails to load */
-            font-size: 16px; /* Adjust size as needed */
-        }
+    <link
+      href="https://fonts.googleapis.com/css2?family=Laries+Script:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <img id="logo" src="logo.png" alt="Twist Nest Logo" />
+      <h1>Twist Nest School</h1>
+    </header>
 
-        #logo {
-            width: 100px; /* Adjust size as necessary */
-            margin-right: 20px; /* Space between logo and title */
-        }
-        .container {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-        }
-        .content {
-            flex: 1;
-            margin-right: 50px; /* Space between content and image */
-        }
-        .welcome-image {
-            max-width: 400px; /* Adjust size as necessary */
-            height: auto;
-            flex-shrink: 0; /* Prevents resizing */
-        }
-        input[type="text"], button {
-            padding: 10px;
-            font-size: 16px;
-            margin-top: 10px;
-            display: block; /* Aligns items to the block */
-        }
-        button {
-            cursor: pointer;
-            background-color: #E0FF78; 
-            border: none;
-            color: black;
-            border-radius: 14px;
-        }
-        .error-message {
-            color: red;
-            margin-top: 10px;
-        }
-        .video-frame {
-            width: 100%; /* Full width of the container */
-            height: 315px; /* Fixed height */
-            border: none;
-            margin-top: 20px;
-        }
-        #video-container {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-        }
-        .video-title {
-            display: none;
-        }
-        #return-button {
-            display: none;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <img id="logo" src="logo.png" alt="Twist Nest Logo"> <!-- Ensure you have a 'logo.png' in your directory -->
-    <h1>Twist Nest School</h1>
-</header>
-
-<div class="container">
-    <div class="content">
-        <h2>WELCOME TO TWIST NEST SCHOOL!</h2>
-        <h3>Congratulations on taking the first step towards unlocking a world of creativity with Twist Nest School! You’re just one coupon code away from accessing a treasure trove of engaging and informative crafting tutorials. 
-            <br><br>Enter your coupon code below to access your tutorial. 
-    The coupon code can be found on the card included with your Twist Stick DIY set purchase. </h3>
-        <input type="text" id="coupon-code" placeholder="Enter your coupon code">
+    <div class="container">
+      <div class="content">
+        <!-- Dynamic Translations -->
+        <div id="content-en" class="translation" style="display: none;">
+          <h2>WELCOME TO TWIST NEST SCHOOL!</h2>
+          <h3>
+            Congratulations on taking the first step towards unlocking a world of creativity with Twist Nest School! You’re just one coupon code away from accessing a treasure trove of engaging and informative crafting tutorials.
+            <br /><br />
+            Enter your coupon code below to access your tutorial. The coupon code can be found on the card included with your Twist Stick DIY set purchase.
+          </h3>
+        </div>
+      
+        <div id="content-de" class="translation" style="display: none;">
+          <h2>WILLKOMMEN BEI TWIST NEST SCHOOL!</h2>
+          <h3>
+            Herzlichen Glückwunsch zum ersten Schritt, um eine Welt der Kreativität mit der Twist Nest School zu entdecken! Sie sind nur einen Gutscheincode davon entfernt, Zugang zu einer Schatzkiste voller fesselnder und informativer Bastelanleitungen zu erhalten.
+            <br /><br />
+            Geben Sie unten Ihren Gutscheincode ein, um auf Ihre Anleitung zuzugreifen. Der Gutscheincode befindet sich auf der Karte, die Ihrem Twist Stick DIY-Set beiliegt.
+          </h3>
+        </div>
+      
+        <div id="content-es" class="translation" style="display: none;">
+          <h2>¡BIENVENIDO A TWIST NEST SCHOOL!</h2>
+          <h3>
+            ¡Felicitaciones por dar el primer paso hacia un mundo de creatividad con Twist Nest School! Solo estás a un código de cupón de acceder a un tesoro de tutoriales atractivos e informativos.
+            <br /><br />
+            Introduce tu código de cupón a continuación para acceder a tu tutorial. El código de cupón se encuentra en la tarjeta incluida con tu set de Twist Stick DIY.
+          </h3>
+        </div>
+      
+        <div id="content-fr" class="translation" style="display: none;">
+          <h2>BIENVENUE À TWIST NEST SCHOOL !</h2>
+          <h3>
+            Félicitations pour avoir franchi la première étape vers un monde de créativité avec Twist Nest School ! Vous n'êtes qu'à un code promo d'accéder à une mine de tutoriels engageants et instructifs.
+            <br /><br />
+            Entrez votre code promo ci-dessous pour accéder à votre tutoriel. Le code promo se trouve sur la carte incluse avec votre kit DIY Twist Stick.
+          </h3>
+        </div>
+      
+        <div id="content-pl" class="translation" style="display: none;">
+          <h2>WITAJ W TWIST NEST SCHOOL!</h2>
+          <h3>
+            Gratulacje! Zrobiłeś pierwszy krok w kierunku odkrycia świata kreatywności z Twist Nest School! Wystarczy, że wprowadzisz kod kuponu, aby uzyskać dostęp do skarbnicy angażujących i pouczających samouczków.
+            <br /><br />
+            Wprowadź swój kod kuponu poniżej, aby uzyskać dostęp do swojego samouczka. Kod kuponu znajduje się na karcie dołączonej do Twojego zestawu DIY Twist Stick.
+          </h3>
+        </div>
+      
+        <!-- Shared Input and Button -->
+        <input type="text" id="coupon-code" placeholder="Enter your coupon code" />
         <button onclick="validateCoupon()">Submit</button>
         <div id="error-message" class="error-message"></div>
+      </div>
+      
+      <img class="welcome-image" src="welcome-image.jpg" alt="Welcome Image" />
     </div>
-    <img class="welcome-image" src="welcome-image.jpg" alt="Welcome Image"> <!-- Ensure you have a 'welcome-image.jpg' in your directory -->
-</div>
 
-<div class="container"><p><b>Not Working?</b><br><br>
+    <!-- Subtitle Instructions -->
+    <div id="subtitle-instructions-en" style="display: none;">
+      You can enable subtitles for the video using YouTube's "CC" button. To
+      translate subtitles into another language, go to Settings, select
+      "Auto-translate," and choose your desired language.
+    </div>
+    <div id="subtitle-instructions-de" style="display: none;">
+      Sie können Untertitel für das Video mit der „CC“-Schaltfläche von YouTube aktivieren. Um Untertitel in eine andere Sprache zu übersetzen, gehen Sie zu „Einstellungen“, wählen Sie „Automatisch übersetzen“ und dann die gewünschte Sprache aus.
+    </div>
+    <div id="subtitle-instructions-es" style="display: none;">
+      Puede habilitar los subtítulos del video usando el botón "CC" de YouTube. Para traducir los subtítulos a otro idioma, vaya a Configuración, seleccione "Auto-translate" y elija el idioma deseado.
+    </div>
+    <div id="subtitle-instructions-fr" style="display: none;">
+      Vous pouvez activer les sous-titres pour la vidéo en utilisant le bouton "CC" de YouTube. Pour traduire les sous-titres dans une autre langue, allez dans Paramètres, sélectionnez "Auto-translate" et choisissez la langue souhaitée.
+    </div>
+    <div id="subtitle-instructions-pl" style="display: none;">
+      Możesz włączyć napisy do filmu za pomocą przycisku „CC” na YouTube. Aby przetłumaczyć napisy na inny język, przejdź do Ustawień, wybierz „Automatyczne tłumaczenie” i wybierz żądany język.
+    </div>
 
-    If you’re experiencing issues with your coupon code or accessing the videos:<br><br>
-    <span> &#8226; </span><b>Double-check your code:</b> Ensure there are no typos and that you’re entering it exactly as it appears.<br>
-    <span> &#8226; </span><b>Contact Support:</b> Need extra help? Our dedicated support team is here to assist you. Reach out via <a href="mailto:twistnest.info@gmail.com">email</a>.
-    </p></div>
+    <!-- Video Container -->
+    <div id="video-container" style="display: none;">
+      <h2 id="video1-title" class="video-title">1. Twisting</h2>
+      <iframe id="video-frame-1" class="video-frame" allowfullscreen></iframe>
+      <h2 id="video2-title" class="video-title" style="display: none;">
+        2: Trimming
+      </h2>
+      <iframe
+        id="video-frame-2"
+        class="video-frame"
+        style="display: none;"
+        allowfullscreen
+      ></iframe>
+      <button id="return-button" onclick="returnToMain()">Return</button>
+    </div>
 
-    
-<div id="video-container">
-    <h2 id="video1-title" class="video-title">1. Twisting</h2>
-    <iframe id="video-frame-1" class="video-frame" allowfullscreen></iframe>
-    <h2 id="video2-title" class="video-title">2: Trimming</h2>
-    <iframe id="video-frame-2" class="video-frame" allowfullscreen></iframe>
-    <button id="return-button" onclick="returnToMain()">Return</button>
-</div>
-
-<script>
-    // Example list of valid coupon codes
-    const validCouponCodes = {
-        "BR4Q9": {
-            video1: "u6hc_oMxafU",
-            video2: "-66eMMbg4fg"
-        },
-        "VS87S": {
-            video1: "l0qqdfx_4Ew",
-            video2: "Ms9U9GJZ5Tg"
-        }
-    };
-
-    function validateCoupon() {
-        const couponCode = document.getElementById('coupon-code').value;
-        const errorMessage = document.getElementById("error-message");
-        const videoContainer = document.getElementById("video-container");
-        const content = document.querySelector('.content');
-        const welcomeImage = document.querySelector('.welcome-image');
-        const videoFrame1 = document.getElementById("video-frame-1");
-        const videoFrame2 = document.getElementById("video-frame-2");
-        const video1Title = document.getElementById("video1-title");
-        const video2Title = document.getElementById("video2-title");
-        const returnButton = document.getElementById("return-button");
-        const upperCaseCoupon = couponCode.toUpperCase();
-
-        if (validCouponCodes[upperCaseCoupon]) {
-            errorMessage.textContent = "";
-            content.style.display = "none";
-            welcomeImage.style.display = "none";
-            videoContainer.style.display = "flex";
-            video1Title.style.display = "block";
-            video2Title.style.display = "block";
-            videoFrame1.src = "https://www.youtube.com/embed/" + validCouponCodes[upperCaseCoupon].video1;
-            videoFrame2.src = "https://www.youtube.com/embed/" + validCouponCodes[upperCaseCoupon].video2;
-            returnButton.style.display = "block";
-        } else {
-            errorMessage.textContent = "Invalid coupon code. Please try again.";
-
-        }
-    }
-
-    function returnToMain() {
-        const content = document.querySelector('.content');
-        const welcomeImage = document.querySelector('.welcome-image');
-        const videoContainer = document.getElementById("video-container");
-
-        content.style.display = "block";
-        welcomeImage.style.display = "block";
-        videoContainer.style.display = "none";
-    }
-</script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

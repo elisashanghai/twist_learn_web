@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'Pacifico';
+    src: url('fonts/Pacifico/Pacifico-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat/static/Montserrat-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto/Roboto-Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: left;
+    margin: 20px;
+    padding: 0;
+    background-color: #85C8FF; /* Light blue background */
+    color: #333; /* Dark text for readability */
+}
+
+header {
+    background-color: #85C8FF; /* Match the body's background color */
+    padding: 10px 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%; /* Ensure the header spans the full width of the page */
+    color: #333; /* Keeping the text color for readability */
+}
+
+header h1 {
+    font-family: 'Pacifico', cursive; /* Use Pacifico with cursive fallback */
+    font-size: 24px;
+}
+
+h2 {
+    font-family: 'Montserrat', cursive; /* Use Montserrat with cursive fallback */
+    font-size: 52px;
+    margin-top: 0;
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif; /* Use Roboto with sans-serif fallback */
+    font-size: 16px;
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+#logo {
+    width: 100px; /* Adjust size as necessary */
+    margin-right: 20px; /* Space between logo and title */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap; /* Ensure it wraps on smaller screens */
+}
+
+.content {
+    flex: 1;
+    margin-right: 50px; /* Space between content and image */
+}
+
+.welcome-image {
+    max-width: 400px; /* Adjust size as necessary */
+    height: auto;
+    flex-shrink: 0; /* Prevents resizing */
+    margin-left: 10px;
+}
+
+.translation {
+    display: none; /* 默认隐藏所有语言内容 */
+}
+
+.content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 52px;
+}
+
+.content h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+input[type="text"], button {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    background-color: #E0FF78;
+    border: none;
+    color: black;
+    border-radius: 14px;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.video-frame {
+    width: 100%; /* Full width of the container */
+    height: 315px; /* Fixed height */
+    border: none;
+    margin-top: 20px;
+}
+
+#video-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.video-title {
+    display: none;
+}
+
+#return-button {
+    display: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #E0FF78;
+    font-size: 14px;
+    cursor: pointer;
+}
