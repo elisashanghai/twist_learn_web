@@ -65,12 +65,12 @@ function validateCoupon() {
     welcomeImage.style.display = "none";
     videoContainer.style.display = "block";
     video1Title.style.display = "block";
-    videoFrame1.src = `https://www.youtube.com/embed/${video1}&cc_load_policy=1&cc_lang_pref=en`;
+    videoFrame1.src = `https://www.youtube.com/embed/${video1}`;
 
     if (video2 && video2 !== "NONE") {
       video2Title.style.display = "block";
       videoFrame2.style.display = "block";
-      videoFrame2.src = `https://www.youtube.com/embed/${video2}&cc_load_policy=1&cc_lang_pref=en`;
+      videoFrame2.src = `https://www.youtube.com/embed/${video2}`;
     } else {
       video2Title.style.display = "none";
       videoFrame2.style.display = "none";
