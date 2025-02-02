@@ -10,6 +10,7 @@ const validCouponCodes = {
   VS87S: { video1: "l0qqdfx_4Ew", video2: "Ms9U9GJZ5Tg" }, //bear
   63826: { video1: "l0qqdfx_4Ew", video2: "Ms9U9GJZ5Tg" }, //bear
   40683: { video1: "n8GX6nDxZno", video2: "NONE" }, //reindeer
+  92638: { video1: "Wx3HJAV7K2k", video2: "NONE" }, //snake
 };
 
 function showSubtitleInstructions() {
@@ -64,12 +65,12 @@ function validateCoupon() {
     welcomeImage.style.display = "none";
     videoContainer.style.display = "block";
     video1Title.style.display = "block";
-    videoFrame1.src = `https://www.youtube.com/embed/${video1}`;
+    videoFrame1.src = `https://www.youtube.com/embed/${video1}&cc_load_policy=1`;
 
     if (video2 && video2 !== "NONE") {
       video2Title.style.display = "block";
       videoFrame2.style.display = "block";
-      videoFrame2.src = `https://www.youtube.com/embed/${video2}`;
+      videoFrame2.src = `https://www.youtube.com/embed/${video2}&cc_load_policy=1`;
     } else {
       video2Title.style.display = "none";
       videoFrame2.style.display = "none";
