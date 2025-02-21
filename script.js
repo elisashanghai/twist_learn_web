@@ -11,7 +11,8 @@ const validCouponCodes = {
   63826: { video1: "l0qqdfx_4Ew", video2: "Ms9U9GJZ5Tg" }, //bear
   40683: { video1: "n8GX6nDxZno", video2: "NONE" }, //reindeer
   92638: { video1: "Wx3HJAV7K2k", video2: "NONE" }, //snake
-  LU039: { video1: "ImDC0v3S6iQ", video2: "NONE" }, //LU Bird
+  LU390: { video1: "ImDC0v3S6iQ", video2: "NONE" }, //LU Bird
+  LU948: { video1: "Dpzu5gUlKzk", video2: "NONE" }, //LU Chic
 };
 
 function showSubtitleInstructions() {
