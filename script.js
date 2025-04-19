@@ -13,6 +13,7 @@ const validCouponCodes = {
   92638: { video1: "Wx3HJAV7K2k", video2: "NONE" }, //snake
   LU390: { video1: "ImDC0v3S6iQ", video2: "NONE" }, //LU Bird
   LU948: { video1: "Dpzu5gUlKzk", video2: "NONE" }, //LU Chic
+  94730: { video1: "WaF5u1uLQmM", video2: "NONE" }, //Rabbit
 };
 
 function showSubtitleInstructions() {
