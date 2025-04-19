@@ -19,152 +19,217 @@
     <div class="container">
       <div class="content">
         <!-- Dynamic Translations -->
-        <div id="content-en" class="translation" style="display: none;">
+        <div id="content-en" class="translation" style="display: none">
           <h2>WELCOME TO TWIST NEST SCHOOL!</h2>
           <h3>
-            Congratulations on taking the first step towards unlocking a world of creativity with Twist Nest School! You’re just one coupon code away from accessing a treasure trove of engaging and informative crafting tutorials.
+            Congratulations on taking the first step towards unlocking a world
+            of creativity with Twist Nest School! You’re just one coupon code
+            away from accessing a treasure trove of engaging and informative
+            crafting tutorials.
             <br /><br />
-            Enter your coupon code below to access your tutorial. The coupon code can be found on the card included with your Twist Stick DIY set purchase.
+            Enter your coupon code below to access your tutorial. The coupon
+            code can be found on the card included with your Twist Stick DIY set
+            purchase.
           </h3>
         </div>
-      
-        <div id="content-de" class="translation" style="display: none;">
+
+        <div id="content-de" class="translation" style="display: none">
           <h2>WILLKOMMEN BEI TWIST NEST SCHOOL!</h2>
           <h3>
-            Herzlichen Glückwunsch zum ersten Schritt, um eine Welt der Kreativität mit der Twist Nest School zu entdecken! Sie sind nur einen Gutscheincode davon entfernt, Zugang zu einer Schatzkiste voller fesselnder und informativer Bastelanleitungen zu erhalten.
+            Herzlichen Glückwunsch zum ersten Schritt, um eine Welt der
+            Kreativität mit der Twist Nest School zu entdecken! Sie sind nur
+            einen Gutscheincode davon entfernt, Zugang zu einer Schatzkiste
+            voller fesselnder und informativer Bastelanleitungen zu erhalten.
             <br /><br />
-            Geben Sie unten Ihren Gutscheincode ein, um auf Ihre Anleitung zuzugreifen. Der Gutscheincode befindet sich auf der Karte, die Ihrem Twist Stick DIY-Set beiliegt.
+            Geben Sie unten Ihren Gutscheincode ein, um auf Ihre Anleitung
+            zuzugreifen. Der Gutscheincode befindet sich auf der Karte, die
+            Ihrem Twist Stick DIY-Set beiliegt.
           </h3>
         </div>
-      
-        <div id="content-es" class="translation" style="display: none;">
+
+        <div id="content-es" class="translation" style="display: none">
           <h2>¡BIENVENIDO A TWIST NEST SCHOOL!</h2>
           <h3>
-            ¡Felicitaciones por dar el primer paso hacia un mundo de creatividad con Twist Nest School! Solo estás a un código de cupón de acceder a un tesoro de tutoriales atractivos e informativos.
+            ¡Felicitaciones por dar el primer paso hacia un mundo de creatividad
+            con Twist Nest School! Solo estás a un código de cupón de acceder a
+            un tesoro de tutoriales atractivos e informativos.
             <br /><br />
-            Introduce tu código de cupón a continuación para acceder a tu tutorial. El código de cupón se encuentra en la tarjeta incluida con tu set de Twist Stick DIY.
+            Introduce tu código de cupón a continuación para acceder a tu
+            tutorial. El código de cupón se encuentra en la tarjeta incluida con
+            tu set de Twist Stick DIY.
           </h3>
         </div>
-      
-        <div id="content-fr" class="translation" style="display: none;">
+
+        <div id="content-fr" class="translation" style="display: none">
           <h2>BIENVENUE À TWIST NEST SCHOOL !</h2>
           <h3>
-            Félicitations pour avoir franchi la première étape vers un monde de créativité avec Twist Nest School ! Vous n'êtes qu'à un code promo d'accéder à une mine de tutoriels engageants et instructifs.
+            Félicitations pour avoir franchi la première étape vers un monde de
+            créativité avec Twist Nest School ! Vous n'êtes qu'à un code promo
+            d'accéder à une mine de tutoriels engageants et instructifs.
             <br /><br />
-            Entrez votre code promo ci-dessous pour accéder à votre tutoriel. Le code promo se trouve sur la carte incluse avec votre kit DIY Twist Stick.
+            Entrez votre code promo ci-dessous pour accéder à votre tutoriel. Le
+            code promo se trouve sur la carte incluse avec votre kit DIY Twist
+            Stick.
           </h3>
         </div>
-      
-        <div id="content-pl" class="translation" style="display: none;">
+
+        <div id="content-pl" class="translation" style="display: none">
           <h2>WITAJ W TWIST NEST SCHOOL!</h2>
           <h3>
-            Gratulacje! Zrobiłeś pierwszy krok w kierunku odkrycia świata kreatywności z Twist Nest School! Wystarczy, że wprowadzisz kod kuponu, aby uzyskać dostęp do skarbnicy angażujących i pouczających samouczków.
+            Gratulacje! Zrobiłeś pierwszy krok w kierunku odkrycia świata
+            kreatywności z Twist Nest School! Wystarczy, że wprowadzisz kod
+            kuponu, aby uzyskać dostęp do skarbnicy angażujących i pouczających
+            samouczków.
             <br /><br />
-            Wprowadź swój kod kuponu poniżej, aby uzyskać dostęp do swojego samouczka. Kod kuponu znajduje się na karcie dołączonej do Twojego zestawu DIY Twist Stick.
+            Wprowadź swój kod kuponu poniżej, aby uzyskać dostęp do swojego
+            samouczka. Kod kuponu znajduje się na karcie dołączonej do Twojego
+            zestawu DIY Twist Stick.
           </h3>
         </div>
-      
+
         <!-- Shared Input and Button -->
-        <input type="text" id="coupon-code" placeholder="Enter your coupon code" />
+        <input
+          type="text"
+          id="coupon-code"
+          placeholder="Enter your coupon code"
+        />
         <button onclick="validateCoupon()">Submit</button>
         <div id="error-message" class="error-message"></div>
       </div>
-      
+
       <img class="welcome-image" src="welcome-image.jpg" alt="Welcome Image" />
     </div>
 
     <div id="not-working-section">
       <!-- English -->
-      <div id="not-working-en" class="not-working" style="display: none;">
+      <div id="not-working-en" class="not-working" style="display: none">
         <h4>Not Working?</h4>
         <p>
-          If you’re experiencing issues with your coupon code or accessing the videos:
+          If you’re experiencing issues with your coupon code or accessing the
+          videos:
           <br />
-          • <strong>Double-check your code:</strong> Ensure there are no typos and that you’re entering it exactly as it appears.<br />
-          • <strong>Contact Support:</strong> Need extra help? Our dedicated support team is here to assist you. Reach out via <a href="mailto:twistnest.info@gmail.com">email</a>.
+          • <strong>Double-check your code:</strong> Ensure there are no typos
+          and that you’re entering it exactly as it appears.<br />
+          • <strong>Contact Support:</strong> Need extra help? Our dedicated
+          support team is here to assist you. Reach out via
+          <a href="mailto:twistnest.info@gmail.com">email</a>.
         </p>
       </div>
-    
+
       <!-- German -->
-      <div id="not-working-de" class="not-working" style="display: none;">
+      <div id="not-working-de" class="not-working" style="display: none">
         <h4>Funktioniert nicht?</h4>
         <p>
-          Wenn Sie Probleme mit Ihrem Gutscheincode oder beim Zugriff auf die Videos haben:
+          Wenn Sie Probleme mit Ihrem Gutscheincode oder beim Zugriff auf die
+          Videos haben:
           <br />
-          • <strong>Überprüfen Sie Ihren Code:</strong> Stellen Sie sicher, dass keine Tippfehler vorliegen und dass Sie ihn genau so eingeben, wie er angezeigt wird.<br />
-          • <strong>Support kontaktieren:</strong> Brauchen Sie Hilfe? Unser Support-Team steht Ihnen zur Verfügung. Kontaktieren Sie uns per <a href="mailto:twistnest.info@gmail.com">E-Mail</a>.
+          • <strong>Überprüfen Sie Ihren Code:</strong> Stellen Sie sicher, dass
+          keine Tippfehler vorliegen und dass Sie ihn genau so eingeben, wie er
+          angezeigt wird.<br />
+          • <strong>Support kontaktieren:</strong> Brauchen Sie Hilfe? Unser
+          Support-Team steht Ihnen zur Verfügung. Kontaktieren Sie uns per
+          <a href="mailto:twistnest.info@gmail.com">E-Mail</a>.
         </p>
       </div>
-    
+
       <!-- Spanish -->
-      <div id="not-working-es" class="not-working" style="display: none;">
+      <div id="not-working-es" class="not-working" style="display: none">
         <h4>¿No funciona?</h4>
         <p>
           Si tiene problemas con su código de cupón o para acceder a los videos:
           <br />
-          • <strong>Verifique su código:</strong> Asegúrese de que no haya errores tipográficos y de ingresarlo exactamente como aparece.<br />
-          • <strong>Contacte al soporte:</strong> ¿Necesita ayuda? Nuestro equipo de soporte está aquí para ayudarlo. Comuníquese por <a href="mailto:twistnest.info@gmail.com">correo electrónico</a>.
+          • <strong>Verifique su código:</strong> Asegúrese de que no haya
+          errores tipográficos y de ingresarlo exactamente como aparece.<br />
+          • <strong>Contacte al soporte:</strong> ¿Necesita ayuda? Nuestro
+          equipo de soporte está aquí para ayudarlo. Comuníquese por
+          <a href="mailto:twistnest.info@gmail.com">correo electrónico</a>.
         </p>
       </div>
-    
+
       <!-- French -->
-      <div id="not-working-fr" class="not-working" style="display: none;">
+      <div id="not-working-fr" class="not-working" style="display: none">
         <h4>Ça ne fonctionne pas ?</h4>
         <p>
-          Si vous rencontrez des problèmes avec votre code promo ou pour accéder aux vidéos :
+          Si vous rencontrez des problèmes avec votre code promo ou pour accéder
+          aux vidéos :
           <br />
-          • <strong>Vérifiez votre code :</strong> Assurez-vous qu'il n'y a pas d'erreurs et que vous l'entrez exactement tel qu'il apparaît.<br />
-          • <strong>Contactez le support :</strong> Besoin d'aide ? Notre équipe de support est là pour vous aider. Contactez-nous par <a href="mailto:twistnest.info@gmail.com">e-mail</a>.
+          • <strong>Vérifiez votre code :</strong> Assurez-vous qu'il n'y a pas
+          d'erreurs et que vous l'entrez exactement tel qu'il apparaît.<br />
+          • <strong>Contactez le support :</strong> Besoin d'aide ? Notre équipe
+          de support est là pour vous aider. Contactez-nous par
+          <a href="mailto:twistnest.info@gmail.com">e-mail</a>.
         </p>
       </div>
-    
+
       <!-- Polish -->
-      <div id="not-working-pl" class="not-working" style="display: none;">
+      <div id="not-working-pl" class="not-working" style="display: none">
         <h4>Nie działa?</h4>
         <p>
           Jeśli masz problemy z kodem kuponu lub dostępem do filmów:
           <br />
-          • <strong>Sprawdź swój kod:</strong> Upewnij się, że nie ma literówek i że wprowadzasz go dokładnie tak, jak jest podany.<br />
-          • <strong>Skontaktuj się z pomocą techniczną:</strong> Potrzebujesz pomocy? Nasz zespół wsparcia jest tutaj, aby Ci pomóc. Skontaktuj się z nami przez <a href="mailto:twistnest.info@gmail.com">e-mail</a>.
+          • <strong>Sprawdź swój kod:</strong> Upewnij się, że nie ma literówek
+          i że wprowadzasz go dokładnie tak, jak jest podany.<br />
+          • <strong>Skontaktuj się z pomocą techniczną:</strong> Potrzebujesz
+          pomocy? Nasz zespół wsparcia jest tutaj, aby Ci pomóc. Skontaktuj się
+          z nami przez <a href="mailto:twistnest.info@gmail.com">e-mail</a>.
         </p>
       </div>
     </div>
 
     <!-- Subtitle Instructions -->
-    <div id="subtitle-instructions-en" style="display: none;">
-      You can enable subtitles for the video using YouTube's "CC" button. To
-      translate subtitles into another language, go to Settings, select
-      "Auto-translate," and choose your desired language.
+    <div id="subtitle-instructions-en" style="display: none">
+      📱 For full-screen viewing on mobile: Tap the YouTube icon in the bottom
+      right corner to open the video on YouTube and enable subtitles. You can
+      turn on subtitles by clicking the "CC" button. To translate subtitles into
+      another language, go to Settings → Subtitles/CC → Auto-translate, and
+      select your preferred language.
     </div>
-    <div id="subtitle-instructions-de" style="display: none;">
-      Sie können Untertitel für das Video mit der „CC“-Schaltfläche von YouTube aktivieren. Um Untertitel in eine andere Sprache zu übersetzen, gehen Sie zu „Einstellungen“, wählen Sie „Automatisch übersetzen“ und dann die gewünschte Sprache aus.
+    <div id="subtitle-instructions-de" style="display: none">
+      📱 Für die Vollbildanzeige auf dem Handy: Tippe auf das YouTube-Symbol
+      unten rechts, um das Video direkt in YouTube zu öffnen und Untertitel zu
+      aktivieren. Du kannst die Untertitel mit der "CC"-Taste einschalten. Um
+      die Untertitel in eine andere Sprache zu übersetzen, gehe zu Einstellungen
+      → Untertitel/CC → Automatisch übersetzen, und wähle deine gewünschte
+      Sprache aus.
     </div>
-    <div id="subtitle-instructions-es" style="display: none;">
-      Puede habilitar los subtítulos del video usando el botón "CC" de YouTube. Para traducir los subtítulos a otro idioma, vaya a Configuración, seleccione "Auto-translate" y elija el idioma deseado.
+    <div id="subtitle-instructions-es" style="display: none">
+      📱 Para ver en pantalla completa desde el móvil: Toca el ícono de YouTube
+      en la esquina inferior derecha para abrir el video en YouTube y activar
+      los subtítulos. Puedes activar los subtítulos haciendo clic en el botón
+      "CC". Para traducir los subtítulos a otro idioma, ve a Configuración →
+      Subtítulos/CC → Traducir automáticamente, y elige tu idioma preferido.
     </div>
-    <div id="subtitle-instructions-fr" style="display: none;">
-      Vous pouvez activer les sous-titres pour la vidéo en utilisant le bouton "CC" de YouTube. Pour traduire les sous-titres dans une autre langue, allez dans Paramètres, sélectionnez "Auto-translate" et choisissez la langue souhaitée.
+    <div id="subtitle-instructions-fr" style="display: none">
+      📱 Pour regarder en plein écran sur mobile : Appuyez sur l’icône YouTube
+      en bas à droite pour ouvrir la vidéo directement sur YouTube et activer
+      les sous-titres. Vous pouvez activer les sous-titres en cliquant sur le
+      bouton "CC". Pour traduire les sous-titres dans une autre langue, allez
+      dans Paramètres → Sous-titres/CC → Traduction automatique, puis choisissez
+      la langue souhaitée.
     </div>
-    <div id="subtitle-instructions-pl" style="display: none;">
-      Możesz włączyć napisy do filmu za pomocą przycisku „CC” na YouTube. Aby przetłumaczyć napisy na inny język, przejdź do Ustawień, wybierz „Automatyczne tłumaczenie” i wybierz żądany język.
+    <div id="subtitle-instructions-pl" style="display: none">
+      📱 Aby oglądać w trybie pełnoekranowym na telefonie: Kliknij ikonę YouTube
+      w prawym dolnym rogu, aby otworzyć film w aplikacji YouTube i włączyć
+      napisy. Możesz włączyć napisy, klikając przycisk "CC". Aby przetłumaczyć
+      napisy na inny język, przejdź do Ustawienia → Napisy/CC → Tłumaczenie
+      automatyczne, a następnie wybierz preferowany język.
     </div>
 
     <!-- Video Container -->
-    <div id="video-container" style="display: none;">
+    <div id="video-container" style="display: none">
       <h2 id="video1-title" class="video-title">1. Twisting</h2>
       <iframe id="video-frame-1" class="video-frame" allowfullscreen></iframe>
-      <h2 id="video2-title" class="video-title" style="display: none;">
+      <h2 id="video2-title" class="video-title" style="display: none">
         2: Trimming
       </h2>
       <iframe
         id="video-frame-2"
         class="video-frame"
-        style="display: none;"
+        style="display: none"
         allowfullscreen
       ></iframe>
       <button id="return-button" onclick="returnToMain()">Return</button>
     </div>
-    
 
     <script src="script.js"></script>
   </body>
